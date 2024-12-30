@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Projects" content="Project">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#151515">
+    <title>some practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- SECTIONS -->
+    <!-- HEADER -->
+    <header>
+        <div>
+            <div>
+                <img src="./56.jpg" alt="">
+            </div>
+            <p>hello site</p>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Repositories</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">Stars</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Repositories</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Stars</a></li>
+        </ul>
+    </nav>
+    <!-- MAIN -->
+    <main>
+
+        <section class="content">
+
+            <div class="user-info">
+
+                <div class="profile-photo">
+                    <img src="./10.jpg" alt="">
+                    <div class="status">
+                        🤔
+                    </div>
+                </div>
+                <h2>Kitten Mom</h2>
+                <h3>Senior Tech Recruiter</h3>
+                <h4>@BigCorporation137</h4>
+                <h3>23 years old</h3>
+                <h3>first contact with PCs: never</h3>
+                <h3>studies: literature, history</h3>
+                <p>Hello. I'm Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore inventore ipsa magni. Perferendis, aut unde..</p>
+                <button>edit profile</button>
+                <div>
+                    <span>2 followers</span>
+                    <span>47 following</span>
+                </div>
+                <div class="">
+                    <ul>
+                        <li>icon - link1</li>
+                        <li>link2</li>
+                        <li>link3</li>
+                        <li>link4</li>
+                        <li>link5</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="projects-overview">
+
+                <div class="pinned">
+                    <div>
+                        <h2>Pinned</h2>
+                        <button>Customize your pins</button>
+                    </div>
+                    
+                    <div>
+                        <div class="project">
+                            <h3>project name</h3>
+                            <p>project description</p>
+                            <div class="project-stats">
+                                <span>language</span>
+                                <span>stars</span>
+                                <span>forks</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h3>project name</h3>
+                            <p>project description</p>
+                            <div class="project-stats">
+                                <span>language</span>
+                                <span>stars</span>
+                                <span>forks</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h3>project name</h3>
+                            <p>project description</p>
+                            <div class="project-stats">
+                                <span>language</span>
+                                <span>stars</span>
+                                <span>forks</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h3>project name</h3>
+                            <p>project description</p>
+                            <div class="project-stats">
+                                <span>language</span>
+                                <span>stars</span>
+                                <span>forks</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h3>project name</h3>
+                            <p>project description</p>
+                            <div class="project-stats">
+                                <span>language</span>
+                                <span>stars</span>
+                                <span>forks</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h3>project name</h3>
+                            <p>project description</p>
+                            <div class="project-stats">
+                                <span>language</span>
+                                <span>stars</span>
+                                <span>forks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <!-- contributions in the last year section -->
+                    <div class="contributions">
+                        <h2>Contributions in the last year</h2>
+                        <!-- js calendar -->
+                        <div class="calendar" id="calendar"></div>
+                    </div> 
+                </div>
+
+                <h2>Top questions</h2>
+                <div class="questions">
+                    <div class="question">
+                        where do you see yourself in 5 years?
+                    </div>
+                    <div class="question">
+                        where do you see yourself in 5 years?
+                    </div>
+                    <div class="question">
+                        where do you see yourself in 5 years?
+                    </div>
+                    <div class="question">
+                        where do you see yourself in 5 years?
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        copyright
+    </footer>
+
+    <script>
+        const calendar = document.getElementById('calendar');
+
+        // generate random commit colour levels
+        const daysInYear = 365;
+        const levels = [0, 1, 2, 3, 4];
+
+        for (let i = 0; i < daysInYear; i++) {
+            const dayBox = document.createElement('div');
+            dayBox.classList.add('day');
+
+            const randomLevel = levels[Math.floor(Math.random() * levels.length)];
+            if (randomLevel > 0) {
+                dayBox.classList.add(`level-${randomLevel}`);
+            }
+
+            calendar.appendChild(dayBox);
+        }
+
+        // add dark spaces for no commit days
+        const startOffset = new Date(new Date().getFullYear(), 0, 1).getDay();
+        for (let i = 0; i < startOffset; i++) {
+            const emptyDiv = document.createElement('div');
+            emptyDiv.classList.add('day');
+            calendar.insertBefore(emptyDiv, calendar.firstChild);
+        }
+    </script>
+</body>
+</html>
