@@ -2,12 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Projects" content="Project">
-    <link rel="manifest" href="./manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#151515">
     <title>some practice</title>
     <link rel="stylesheet" href="styles.css">
@@ -87,7 +82,7 @@
                         <button>Customize your pins</button>
                     </div>
                     
-                    <div>
+                    <div class="pinned-list">
                         <div class="project">
                             <h3>project name</h3>
                             <p>project description</p>
@@ -148,22 +143,44 @@
                 <div class="activity">
                     <!-- contributions in the last year section -->
                     <div class="contributions">
-                        <h2>Contributions in the last year</h2>
+                        <h2>Contributions in the past year</h2>
                         <!-- js calendar -->
-                        <div class="calendar" id="calendar"></div>
+                        <div class="calendar-header">
+                            <h4>Jan</h4>
+                            <h4>Feb</h4>
+                            <h4>Mar</h4>
+                            <h4>Apr</h4>
+                            <h4>May</h4>
+                            <h4>Jun</h4>
+                            <h4>Jul</h4>
+                            <h4>Aug</h4>
+                            <h4>Sep</h4>
+                            <h4>Oct</h4>
+                            <h4>Nov</h4>
+                            <h4>Dec</h4>
+                        </div>
+                        <div class="calendar-container">
+                            <div>
+                                <h4>Mon</h4>
+                                <h4>Tue</h4>
+                                <h4>Wed</h4>
+                            </div>
+                            <div class="calendar" id="calendar"></div>
+                        </div>
                     </div> 
                 </div>
 
-                <h2>Top questions</h2>
+                <h2>Top questions asked in 2024</h2>
                 <div class="questions">
                     <div class="question">
                         where do you see yourself in 5 years?
                     </div>
                     <div class="question">
-                        where do you see yourself in 5 years?
+                        How would you describe a perfect day at work?
                     </div>
                     <div class="question">
-                        where do you see yourself in 5 years?
+                        For you, what would be the most important thing in a team?
+                        <div>reactions?</div>
                     </div>
                     <div class="question">
                         where do you see yourself in 5 years?

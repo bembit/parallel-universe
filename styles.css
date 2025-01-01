@@ -24,6 +24,8 @@
     --counter-blue: #6388F3;
     --text-color: #252525;
     --green: #30c78d;
+
+    --border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* base setup */
@@ -67,6 +69,10 @@ h1 {
     font-size: 2.5rem;
 }
 
+h2 {
+    margin-bottom: 1rem;
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -79,7 +85,7 @@ header {
     display: flex;
     justify-content: space-between;
     /* padding: 2rem 2rem; */
-    border-bottom: 1px solid white;
+    border-bottom: var(--border);
 }
 
 header > div {
@@ -122,7 +128,7 @@ nav ul li:not(:last-child) {
 section {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    border: var(--border);
     height: 100%;
 }
 
@@ -137,7 +143,7 @@ section {
 
 .user-info {
     flex-basis: 20%;
-    border: 1px solid white;
+    border: var(--border);
 }
 
 .user-info .profile-photo {
@@ -164,7 +170,7 @@ section {
 
 .projects-overview {
     flex-basis: 80%;
-    border: 1px solid white;
+    border: var(--border);
 }
 
 .pinned {
@@ -172,21 +178,51 @@ section {
     flex-direction: column;
 }
 
-.pinned div:last-of-type {
+.pinned .pinned-list {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 10px;
+    gap: 10px;
+    /* width: 100%; */
 }
 
 .pinned div:last-of-type .project {
-    flex-basis: 50%;
-    border: 1px solid white;
+    flex-basis: calc(50% - 10px);
+    border: var(--border);
+    border-radius: 3px;
 }
 
 .calendar {
     display: grid;
     grid-template-columns: repeat(53, 12px);
     grid-gap: 2px;
+    padding: 15px 15px;
+    border: var(--border);
+    border-radius: 3px;
 }
+
+.calendar-header {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    font-size: 14px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.calendar-container {
+    display: flex;
+    height: 100%;
+    font-size: 14px;
+}
+
+.calendar-container div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+
 .day {
     width: 12px;
     height: 12px;
