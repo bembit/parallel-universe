@@ -1,36 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* colors */
-
 :root {
-    --box-shadow: 0 2px 16px 0 rgb(0 0 0 / 8%);
-    --blue: #15226d;
-    --dark-blue: #040c50;
-    --orange: #ea4b01;
-    --light-blue: #0097cf;
-    --yellow: #f9d98a;
-    --subtle-yellow: #f3ce63;
-    --vivid-yellow: #ffb700;
-    --red: #cf4a60;
-    /* --dark: #444; */
-    /* --dark: #232a35; */
-    /* --dark: #171d25; */
     --dark: #0c1118;
     --dark-l: #343c4a;
+    --dark-grey: #6a7079;
     --white: #fff;
     --light-grey: #f5f5f5;
-    --mid-grey: #f3f3f3;
-    --subtle-grey: #eee;
-    --dark-grey: #6c757d;
-    --subtle-blue: #9ebcd2;
-    --counter-blue: #6388F3;
-    --text-color: #252525;
-    --green: #30c78d;
-
     --border: 0.5px solid rgba(255, 255, 255, 0.253);
 }
-
-/* base setup */
 
 *,
 *::after,
@@ -41,7 +18,6 @@
 }
 
 body {
-    /* font-family: 'Work Sans', sans-serif; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--dark);
     color: var(--light-grey);
@@ -49,7 +25,7 @@ body {
     font-size: 16px;
 }
 
-a {
+a,a:visited {
     text-decoration: none;
     color: inherit;
 }
@@ -72,6 +48,11 @@ h1,h2,h3,h4,h5 {
     margin-bottom: 10px;
 }
 
+.user-info i {
+    width: 25px;
+    color: var(--dark-grey);
+}
+
 .user-info > ul:first-of-type {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -86,10 +67,6 @@ h1,h2,h3,h4,h5 {
 
 .projects-overview h3 {
     margin-bottom: 20px;
-}
-
-.projects-overview .pinned h3 {
-    /* margin-top: 25px; */
 }
 
 .projects-overview .activity h3 {
@@ -110,7 +87,6 @@ ul {
 header {
     display: flex;
     justify-content: space-between;
-    /* border-bottom: var(--border); */
     background-color: #02010c;
 }
 
@@ -135,7 +111,6 @@ header img {
 
 header nav img {
     width: 35px;
-    /* margin-left: 10px; */
 }
 
 header nav {
@@ -176,6 +151,7 @@ nav .search-bar {
 
 header i {
     font-size: 18px;
+    color: var(--dark-grey);
 }
 
 .nav *:not(:last-child) {
@@ -183,8 +159,8 @@ header i {
 }
 
 header {
+    position: relative;
     padding: 1% 1%;
-    /* padding: 0.5% 1%; */
 }
 
 button {
@@ -216,10 +192,13 @@ header button {
     margin-bottom: 10px;
 }
 
+.edit-profile:hover {
+    background-color: #181f29;
+}
+
 nav:not(header > nav) {
     font-size: 16px;
     background-color: #02010c;
-    /* padding-bottom: 1%; */
     min-height: 40px;
     padding-left: 1%;
     margin-bottom: 45px;
@@ -239,6 +218,7 @@ nav:not(header > nav) {
     }
     i {
         font-size: 14px;
+        color: var(--dark-grey);
     }
 }
 
@@ -248,10 +228,6 @@ nav:not(header > nav) i {
 
 nav:not(header > nav) ul li:not(:last-of-type) {
     margin-right: 10px;
-}
-
-main, footer {
-    /* padding: 2% 20%; */
 }
 
 main {
@@ -274,13 +250,11 @@ section {
     max-width: 1280px;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
     justify-content: space-between;
 }
 
 .user-info {
     flex-basis: 30%;
-    /* border: var(--border); */
     max-width: 296px;
     min-width: 296px;
 }
@@ -299,7 +273,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid white;
+    border: var(--border);
+    background-color: var(--dark);
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -314,25 +289,37 @@ section {
 }
 
 .user-info .achievements {
+    position: relative;
     margin-top: 10px;
     display: flex;
     img {
+        border: 2px solid var(--white);
         width: 65px;
         height: auto;
         border-radius: 50%;
         margin-right: 10px;
     }
+    img:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    top: 80px;
+    font-size: 14px;
+    z-index: 1;
 }
 
 hr {
+    border: none;
     height: 1px;
-    background-color: #0e49a8;
+    background-color: #ffffff2d;
 }
 
 .projects-overview {
     margin-left: 15px;
-    /* flex-basis: 70%; */
-    /* border: var(--border); */
 }
 
 .pinned {
@@ -343,9 +330,7 @@ hr {
 .pinned .pinned-list {
     display: flex;
     flex-wrap: wrap;
-    /* padding-left: 10px; */
     gap: 10px;
-    /* width: 100%; */
 }
 
 .pinned > div:first-of-type {
@@ -354,7 +339,6 @@ hr {
 }
 
 .pinned div:last-of-type .project {
-    /* flex-basis: calc(50% - 10px); */
     flex-basis: calc(50% - 5px);
     border: var(--border);
     border-radius: 5px;
@@ -364,10 +348,16 @@ hr {
     position: relative;
     h3 {
         color: #2b6bd1;
+        line-break: anywhere;
     }
     i {
-        color: var(--white);
+        color: var(--dark-grey);
     }
+}
+
+.pinned div:last-of-type .project > p {
+    font-size: 14px;
+    color: #cecece;
 }
 
 .pinned div:last-of-type .project > h3 > i {
@@ -390,8 +380,12 @@ hr {
 }
 
 .activity {
-    /* width: 80%; */
     display: flex;
+}
+
+.activity > div {
+    display: flex;
+    flex-direction: column;
 }
 
 .activity ul {
@@ -422,7 +416,31 @@ hr {
     }
 }
 
+.pilotthis {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    z-index: 100;
+    font-size: 12px;
+    text-transform: uppercase;
+    animation: colorChange 1s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        color: red;
+    }
+    50% {
+        color: green;
+    }
+    100% {
+        color: blue;
+    }
+}
+
 .contributions {
+    display: flex;
+    flex-direction: column;
     border: var(--border);
     border-radius: 3px;
     padding: 10px 10px;
@@ -433,8 +451,6 @@ hr {
     grid-template-columns: repeat(53, 10px);
     grid-gap: 2px;
     padding: 10px 10px;
-    /* border: var(--border); */
-    /* border-radius: 3px; */
     width: 100%;
 }
 
@@ -484,6 +500,95 @@ hr {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-top: 100px;
     text-align: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+    p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+        max-width: 375px;
+        border: var(--border);
+        padding: 10px 10px;
+        border-radius: 5px;
+    }
+}
+
+/* needs mobile */
+
+@media screen and (max-width: 1200px) {
+    main {
+        padding: 0% 0%;
+    }
+    .activity .years {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .user-info {
+        max-width: 250px;
+        min-width: 250px;
+    }
+    .user-info .profile-photo img {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .user-info {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .user-info .profile-photo img {
+        max-width: 175px;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .pinned div:last-of-type .project {
+        flex-basis: 100%;
+        border: var(--border);
+        border-radius: 5px;
+        flex-direction: column;
+        padding: 10px 10px;
+        h3 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 13px;
+        }
+    }
+    .projects-overview {
+        margin-left: 0;
+    }
+    .user-info {
+        margin-bottom: 75px;
+    }
+    .user-info .profile-photo .status {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .calendar-container, .contributions, header .search-bar {
+        display: none;
+    }
+    header nav ul li:nth-of-type(2) button, header nav ul li:nth-of-type(3) button, nav:not(header > nav) ul li:nth-of-type(3), nav:not(header > nav) ul li:nth-of-type(4), nav:not(header > nav) ul li:nth-of-type(5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header p {
+        display: none;
+    }
 }
