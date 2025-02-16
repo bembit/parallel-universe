@@ -7,9 +7,14 @@
     <title>Parallel Universe</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/df3e6f116a.js" crossorigin="anonymous"></script>
+    <style>
+        .load {
+            opacity: 0;
+        }
+    </style>
 </head>
 
-<body>
+<body class="load">
 
     <header>
         <div>
@@ -33,11 +38,11 @@
                     <button><i class="fa-solid fa-code-pull-request"></i></button>
                 </li>
                 <li>
-                    <button><img src="./random/10.jpg" alt=""></button>
+                    <button><img id="user-photo-small" src="./random/56.jpg" alt=""></button>
                 </li>
             </ul>
         </nav>
-        <div class="pilotthis">please use copilot pls pls pls</div>
+        <!-- <div class="pilotthis">please use copilot pls pls pls</div> -->
     </header>
 
     <nav>
@@ -57,16 +62,16 @@
             <div class="user-info">
 
                 <div class="profile-photo">
-                    <img src="./random/10.jpg" alt="">
+                    <img id="user-photo" src="./random/56.jpg" alt="">
                     <div class="status">
                         🤔
                     </div>
                 </div>
 
-                <h2>Zsanett</h2>
-                <h2 class="handle">@KittenMom</h2>
+                <h2 id="user-name">Zsanett</h2>
+                <h2 id="user-handle" class="handle">@KittenMom</h2>
                 <h3>Senior Tech Recruiter</h3>
-                <p>Hello. I'm a 23 years old Senior Tech recruiter located in Budapest, Hungary. I studied literature and history. I enjoy TikTok.</p>
+                <p id="user-bio">Hello. I'm a 23 years old Senior Tech recruiter located in Budapest, Hungary. I studied literature and history. I enjoy TikTok.</p>
 
                 <button class="edit-profile">Edit profile</button>
 
@@ -147,7 +152,7 @@
                         </div>
                         <div class="project">
                             <h3><i class="fa-regular fa-address-book"></i>we_will_let_you_know_soon.docx</h3>
-                            <p>My collection of templates I never send to unsuccessful applicants.</p>
+                            <p>My collection of "sorry" templates I never send to unsuccessful applicants.</p>
                             <div class="project-stats">
                                 <img src="./ms/outlook_48x1.svg" alt="">
                                 <img src="./ms/onenote_48x1.svg" alt="">
@@ -156,7 +161,7 @@
                         </div>
                         <div class="project">
                             <h3><i class="fa-regular fa-address-book"></i>tricks_to_keep_a_silver_candidate_hanging</h3>
-                            <p>A case study on how to prolong an inverview process for over 4 months in case you keep having better candidates.</p>
+                            <p>A case study on how to prolong an inverview process for over 4 months, in case you keep having better candidates.</p>
                             <div class="project-stats">
                                 <img src="./ms/powerpoint_48x1.svg" alt="">
                             </div>
@@ -248,6 +253,63 @@
     </footer>
 
     <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // very efficient jank-free loading, heh.
+            setTimeout(() => {
+                document.body.classList.remove('load');
+            }, 300);
+        });
+
+        // make some random users
+        const userPhotos = [
+            "./random/3.jpg",
+            "./random/10.jpg",
+            "./random/21.jpg",
+            "./random/28.jpg",
+            "./random/34.jpg",
+            "./random/56.jpg",
+            "./random/57.jpg",
+            "./random/59.jpg",
+            "./random/65.jpg",
+            "./random/73.jpg",
+            "./random/77.jpg"
+        ];
+        const userPhoto = document.getElementById('user-photo');
+        const userPhotoSmall = document.getElementById('user-photo-small');
+        // need the index to set the small ones too
+        const randomPhoto = userPhotos[Math.floor(Math.random() * userPhotos.length)];
+        userPhoto.src = randomPhoto;
+        userPhotoSmall.src = randomPhoto;
+
+        const userNames = [
+            "Zsanett",
+            "Klaudia",
+            "Zsófi",
+            "Petra",
+            "Ági",
+            "Verus",
+            "Szilvia"
+        ];
+        const userName = document.getElementById('user-name');
+        userName.innerText = userNames[Math.floor(Math.random() * userNames.length)];
+
+        const userHandles = [
+            "@KittenMom",
+            "@HRMom"
+        ]
+        const userHandle = document.getElementById('user-handle');
+        userHandle.innerText = userHandles[Math.floor(Math.random() * userHandles.length)];
+
+        const userBios = [
+            "Hello. I'm a 23 years old Senior Tech recruiter located in Budapest, Hungary. I studied literature and history. I enjoy TikTok.",
+            "Hello. I'm a 21 years old Senior Tech recruiter located in Budapest, Hungary. I enjoy hiking and traveling.",
+            "Hello. I'm a 25 years old Senior Tech recruiter located in Budapest, Hungary. I enjoy hiking and traveling. I'm a big fan of LinkedIn."
+        ];
+        const userBio = document.getElementById('user-bio');
+        userBio.innerText = userBios[Math.floor(Math.random() * userBios.length)];
+
+
         const calendar = document.getElementById('calendar');
 
         // generate random commit colour levels

@@ -107,10 +107,7 @@ header p {
 header img {
     border-radius: 50%;
     height: 30px;
-}
-
-header nav img {
-    width: 35px;
+    border: var(--border);
 }
 
 header nav {
@@ -129,6 +126,7 @@ header nav {
     img {
         height: 30px;
         width: auto;
+        border: var(--border);
     }
 }
 
@@ -267,6 +265,7 @@ section {
     width: 100%;
     max-width: 296px;
     border-radius: 50%;
+    border: var(--border);
 }
 
 .user-info .profile-photo .status {
