@@ -521,8 +521,7 @@ footer {
     }
 }
 
-/* needs mobile */
-
+/* desktop */
 @media screen and (max-width: 1200px) {
     main {
         padding: 0% 0%;
@@ -573,7 +572,7 @@ footer {
         margin-bottom: 75px;
     }
     .user-info .profile-photo .status {
-        display: none;
+        right: initial;
     }
 }
 
@@ -583,6 +582,21 @@ footer {
     }
     header nav ul li:nth-of-type(2) button, header nav ul li:nth-of-type(3) button, nav:not(header > nav) ul li:nth-of-type(3), nav:not(header > nav) ul li:nth-of-type(4), nav:not(header > nav) ul li:nth-of-type(5) {
         display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .activity ul:not(.activity > ul) {
+        li:nth-of-type(3) {
+            background-color: #0e49a8;
+        }
+    }
+    header { padding : 2.5% 2%; }
+    header p > span {
+        display: none;
+    }
+    .activity ul {
+        padding-left: 0;
     }
 }
 
